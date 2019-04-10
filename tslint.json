@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "@evojam/tslint-rules/tslint.json",
+  ],
+  "rules": {
+    "brace-style": [true, "1tbs", { "allowSingleLine": true }],
+    "no-console": { "severity": "warn" },
+    "no-expression-statement": false,
+    "no-unnecessary-callback-wrapper": false,
+    "no-unsafe-any": false,
+    "no-magic-numbers": false,
+    "no-unused-variable": false,
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case",
+      "allow-trailing-underscore",
+      "ban-keywords"
+    ]
+  }
+}

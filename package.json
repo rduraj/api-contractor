@@ -1,0 +1,37 @@
+{
+  "name": "api-contractor",
+  "author": "Robert Duraj",
+  "version": "1.0.0",
+  "main": "./build/srcipt/contractor.js",
+  "bin": {
+    "parse-contracts": "./build/parser/index.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc -w",
+    "lint": "tslint src/**/*.ts{,x} --project ./tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "showdown": "^1.9.0",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "@evojam/tslint-rules": "evojam/tslint-rules",
+    "@types/jest": "^23.3.3",
+    "@types/node": "^11.13.2",
+    "@types/showdown": "^1.9.2",
+    "@types/yargs": "^13.0.0",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "roots": [
+      "src"
+    ],
+    "testEnvironment": "node"
+  }
+}

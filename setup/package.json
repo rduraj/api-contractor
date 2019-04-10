@@ -1,0 +1,16 @@
+{
+  "name": "sample-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "parse-contracts --path ./docs"
+  },
+  "dependencies": {
+    "api-contractor": "../api-contractor"
+  },
+  "license": "ISC"
+}

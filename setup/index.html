@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Contract</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="columns">
+        <div class="column col-6 col-mx-auto h2">
+          API Contract
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column col-6 col-mx-auto">
+          <div id="contract"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../api-contractor/build/script/contracts.js"></script>
+    <script src="../api-contractor/build/script/contractor.js"></script>
+    <script>
+      showContract(document.getElementById('contract'))
+    </script>
+  </body>
+</html>
