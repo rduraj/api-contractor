@@ -2,25 +2,25 @@
 <html>
   <head>
     <title>API Contract</title>
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./node_modules/api-contractor/src/styles/contractor.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="columns">
-        <div class="column col-6 col-mx-auto h2">
-          API Contract
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column col-6 col-mx-auto">
-          <div id="contract"></div>
-        </div>
+    <div class="row">
+      <div class="col s10 offset-s1">
+        <h4>API Contract</h4>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col s10 offset-s1">
+        <ul class="collapsible" id='contract'></ul>
       </div>
     </div>
 
-    <script src="../api-contractor/build/script/contracts.js"></script>
-    <script src="../api-contractor/build/script/contractor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./node_modules/api-contractor/build/script/contracts.js"></script>
+    <script src="./node_modules/api-contractor/build/script/contractor.js"></script>
     <script>
       showContract(document.getElementById('contract'))
     </script>

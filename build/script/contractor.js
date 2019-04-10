@@ -1,12 +1,20 @@
 "use strict";
 var showContract = function (element) {
-    element.innerHTML = Object.keys(contracts).map(function (module) {
+    element.innerHTML = Object.keys(contracts)
+        .map(function (module) {
         var contractList = contracts[module]
             .map(function (_a) {
             var name = _a.name, method = _a.method, contract = _a.contract;
-            return "\n          <div class=\"card\">\n            <div class=\"card-header\">\n              <div class=\"card-title h5\">" + name + "</div>\n              <div class=\"card-subtitle text-gray\">" + method + "</div>\n            </div>\n            <div class=\"card-body\">" + contract + "</div>\n          </div>\n        ";
+            return "\n            <li class=\"collection-item contract-item\">\n              <div class=\"collapsible-header contract-item-header\">\n                <small class=\"method-" + method.toLowerCase() + "\">" + method + "</small> " + name + "\n              </div>\n              <div class=\"collapsible-body contract-item-body\">\n                " + contract + "\n              </div>\n            </li>\n          ";
         });
-        return "\n        <details class=\"accordion\">\n          <summary class=\"accordion-header\">\n            <i class=\"icon icon-arrow-right mr-1\"></i>\n            " + module + "\n          </summary>\n          <div class=\"accordion-body\">\n            " + contractList + "\n          </div>\n        </details>\n      ";
-    }).reduce(function (list, contract) { return list + contract; }, '');
+        return contractList
+            ? "<li class=\"contract\">\n              <div class=\"collapsible-header\">\n                <i class=\"material-icons\">layers</i>" + module + "\n              </div>\n              <div class=\"collapsible-body\">\n                <ul class=\"collapsible\">\n                  " + contractList.join('') + "\n                </ul>\n              </div>\n            </li>"
+            : '';
+    })
+        .join('');
 };
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(elems);
+});
 //# sourceMappingURL=contractor.js.map

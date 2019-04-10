@@ -17,6 +17,7 @@
     "yargs": "^13.2.2"
   },
   "devDependencies": {
+    "@types/materialize-css": "1.0.6",
     "@evojam/tslint-rules": "evojam/tslint-rules",
     "@types/jest": "^23.3.3",
     "@types/node": "^11.13.2",

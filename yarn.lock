@@ -24,9 +24,29 @@
     tslint-immutable "4.5.4"
     tslint-react "3.5.1"
 
+"@types/cash@*":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/cash/-/cash-0.0.3.tgz#770d6382c605bb4f8572f17cea6f40cec5832496"
+  integrity sha512-gS24kdFuVwfo5h7IlStnXyBSIH4e9aFIhNHb4w+o5DwbYDeQJv+i9heh7u7nSvqnOP3v34tQMTe7VoJp2US08w==
+
 "@types/jest@^23.3.3":
   version "23.3.3"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.3.tgz#246ebcc52771d2327bb8e37aa971b412d9dc4237"
+
+"@types/jquery@*":
+  version "3.3.29"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.29.tgz#680a2219ce3c9250483722fccf5570d1e2d08abd"
+  integrity sha512-FhJvBninYD36v3k6c+bVk1DSZwh7B5Dpb/Pyk3HKVsiohn0nhbefZZ+3JXbWQhFyt0MxSl2jRDdGQPHeOHFXrQ==
+  dependencies:
+    "@types/sizzle" "*"
+
+"@types/materialize-css@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-1.0.6.tgz#94ba0261b4d581f444dd5d543d5d73926ba3c5c7"
+  integrity sha512-H/QXdgih11880Rx+yhLU5mDCm3SVGF7CYyQjEmRYGrn/fGrPc+s2SQBwbB9gZCw2a/39bDkH/v+wyysj0nWXCQ==
+  dependencies:
+    "@types/cash" "*"
+    "@types/jquery" "*"
 
 "@types/node@^11.13.2":
   version "11.13.2"
@@ -37,6 +57,11 @@
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/@types/showdown/-/showdown-1.9.2.tgz#0134db71ea5eff1b7c68e3b17d63572231897ad1"
   integrity sha512-svzejtTEGDh3aA0S3AttLFF6o8hQG50cwdnOwkdK6BT/k9b1iN/kD1Gs2U3DiuECGEFF7FkCqcpx3tdZuYtuWg==
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
 "@types/yargs-parser@*":
   version "13.0.0"

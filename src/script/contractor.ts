@@ -3,29 +3,38 @@ declare const contracts: Contracts
 
 const showContract = (element: HTMLElement) => {
 
-  element.innerHTML = Object.keys(contracts).map(module => {
-      const contractList = contracts[module]
-        .map(({ name, method, contract }) => `
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title h5">${name}</div>
-              <div class="card-subtitle text-gray">${method}</div>
-            </div>
-            <div class="card-body">${contract}</div>
-          </div>
-        `)
+  element.innerHTML = Object.keys(contracts)
+    .map(module => {
+        const contractList = contracts[module]
+          .map(({ name, method, contract }) => `
+            <li class="collection-item contract-item">
+              <div class="collapsible-header contract-item-header">
+                <small class="method-${method.toLowerCase()}">${method}</small> ${name}
+              </div>
+              <div class="collapsible-body contract-item-body">
+                ${contract}
+              </div>
+            </li>
+          `)
 
-      return `
-        <details class="accordion">
-          <summary class="accordion-header">
-            <i class="icon icon-arrow-right mr-1"></i>
-            ${module}
-          </summary>
-          <div class="accordion-body">
-            ${contractList}
-          </div>
-        </details>
-      `
-  }).reduce((list, contract) => list + contract, '')
-
+        return contractList
+          ? `<li class="contract">
+              <div class="collapsible-header">
+                <i class="material-icons">layers</i>${module}
+              </div>
+              <div class="collapsible-body">
+                <ul class="collapsible">
+                  ${contractList.join('')}
+                </ul>
+              </div>
+            </li>`
+          : ''
+    })
+    .join('')
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elems = document.querySelectorAll('.collapsible')
+  M.Collapsible.init(elems)
+})
