@@ -1,8 +1,6 @@
 {
   "name": "sample-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
@@ -10,7 +8,6 @@
     "build": "parse-contracts --path ./docs"
   },
   "dependencies": {
-    "api-contractor": "../api-contractor"
-  },
-  "license": "ISC"
+    "api-contractor": "https://github.com/rduraj/api-contractor"
+  }
 }
