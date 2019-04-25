@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "main": "./build/srcipt/contractor.js",
   "bin": {
-    "parse-contracts": "./build/parser/index.js"
+    "parse-contracts": "./build/contractor-parser/index.js"
   },
   "license": "MIT",
   "scripts": {
-    "start": "tsc -w",
+    "build-app": "?",
+    "build-parser": "tsc -w -p ./tsconfig.json",
     "lint": "tslint src/**/*.ts{,x} --project ./tsconfig.json",
     "test": "jest"
   },

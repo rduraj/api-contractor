@@ -44,4 +44,4 @@ const contracts: Contracts = readdirSync(contractsPath).map(module => {
 })
 .reduce((contractList, moduleList) => ({...contractList, ...moduleList}), {})
 
-writeFileSync('./node_modules/api-contractor/build/script/contracts.js', `const contracts = ${JSON.stringify(contracts)}`, 'utf-8')
+writeFileSync('./node_modules/api-contractor/build/contractor-app/contracts.js', `const contracts = ${JSON.stringify(contracts)}`, 'utf-8')

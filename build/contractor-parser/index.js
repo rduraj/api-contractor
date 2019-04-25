@@ -42,5 +42,5 @@ var contracts = fs_1.readdirSync(contractsPath).map(function (module) {
         _a;
 })
     .reduce(function (contractList, moduleList) { return (__assign({}, contractList, moduleList)); }, {});
-fs_1.writeFileSync('./node_modules/api-contractor/build/script/contracts.js', "const contracts = " + JSON.stringify(contracts), 'utf-8');
+fs_1.writeFileSync('./node_modules/api-contractor/build/contractor-app/contracts.js', "const contracts = " + JSON.stringify(contracts), 'utf-8');
 //# sourceMappingURL=index.js.map

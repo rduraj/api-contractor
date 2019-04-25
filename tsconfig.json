@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "build",
+    "outDir": "build/contractor-parser",
     "module": "commonjs",
     "target": "es5",
     "lib": ["es2015", "es2017", "dom"],
@@ -20,6 +20,9 @@
       "src/typings"
     ]
   },
+  "include": [
+    "./src/contractor-parser"
+  ],
   "exclude": [
     "node_modules",
     "build",
