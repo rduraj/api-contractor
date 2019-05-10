@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { readFileSync, readdirSync, writeFileSync } from 'fs'
 import { Converter } from 'showdown'
 import { argv } from 'yargs'

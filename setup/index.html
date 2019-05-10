@@ -2,27 +2,10 @@
 <html>
   <head>
     <title>API Contract</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./node_modules/api-contractor/src/styles/contractor.css" />
   </head>
   <body>
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <h4>API Contract</h4>
-    </div>
-    </div>
-    <div class="row">
-      <div class="col s10 offset-s1">
-        <ul class="collapsible" id='contract'></ul>
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./node_modules/api-contractor/build/script/contracts.js"></script>
-    <script src="./node_modules/api-contractor/build/script/contractor.js"></script>
-    <script>
-      showContract(document.getElementById('contract'))
-    </script>
+    <div id="root"></div>
+    <script src="node_modules/api-contractor/build/contractor-app/contracts.js"></script>
+    <script src="node_modules/api-contractor/build/contractor-app/contractor.js"></script>
   </body>
 </html>
