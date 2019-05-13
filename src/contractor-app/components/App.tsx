@@ -11,7 +11,7 @@ export const App: React.FunctionComponent = () => (
     </Row>
     <Row>
       <Col s={10} offset='s1'>
-        <Contracts />
+        <Contracts contracts={contracts} />
       </Col>
     </Row>
   </>
