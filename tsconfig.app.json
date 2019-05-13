@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src/contractor-app",
+    "outDir": "build/contractor-app",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["es2015", "es2017", "dom"],
+    "jsx": "react",
+    "sourceMap": true,
+    "allowJs": false,
+    "moduleResolution": "node",
+    "pretty": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "./src/contracts.d.ts",
+      "./src/contractor-app/typings.d.ts"
+    ]
+  },
+}

@@ -2,31 +2,43 @@
   "name": "api-contractor",
   "author": "Robert Duraj",
   "version": "1.0.0",
-  "main": "./build/srcipt/contractor.js",
+  "main": "./build/contractor-parser/parser.js",
   "bin": {
-    "parse-contracts": "./build/parser/index.js"
+    "parse-contracts": "./build/contractor-parser/parser.js"
   },
   "license": "MIT",
   "scripts": {
-    "start": "tsc -w",
-    "lint": "tslint src/**/*.ts{,x} --project ./tsconfig.json",
+    "build-app": "webpack --config=./webpack.app.config.js --mode=production",
+    "build-app:dev": "webpack --config=./webpack.app.config.js --mode=development",
+    "build-parser": "webpack --config=./webpack.parser.config.js --mode=production",
+    "build-parser:dev": "webpack --config=./webpack.parser.config.js --mode=development",
     "test": "jest"
   },
   "dependencies": {
-    "showdown": "^1.9.0",
-    "yargs": "^13.2.2"
+    "@types/jest": "24.0.11",
+    "materialize-css": "1.0.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-materialize": "3.3.0",
+    "showdown": "1.9.0",
+    "yargs": "13.2.2"
   },
   "devDependencies": {
-    "@types/materialize-css": "1.0.6",
     "@evojam/tslint-rules": "evojam/tslint-rules",
-    "@types/jest": "^23.3.3",
-    "@types/node": "^11.13.2",
-    "@types/showdown": "^1.9.2",
-    "@types/yargs": "^13.0.0",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.4",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "@types/materialize-css": "1.0.6",
+    "@types/node": "11.13.2",
+    "@types/react": "16.8.17",
+    "@types/react-dom": "16.8.4",
+    "@types/showdown": "1.9.2",
+    "@types/yargs": "13.0.0",
+    "css-loader": "2.1.1",
+    "style-loader": "0.23.1",
+    "ts-jest": "24.0.2",
+    "ts-loader": "6.0.0",
+    "tslint": "5.11.0",
+    "typescript": "3.4.5",
+    "webpack": "4.31.0",
+    "webpack-cli": "3.3.2"
   },
   "jest": {
     "preset": "ts-jest",
