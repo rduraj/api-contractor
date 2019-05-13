@@ -7,19 +7,19 @@ const compareNames = (name: string, nameToCompare: string) => name && nameToComp
 export const isModuleSelected = (name: string) => {
   const [module] = getSplittedHash()
 
-  return compareNames(module, name)
+  return !!compareNames(module, name)
 }
 
 export const isMethodSelected = (name: string) => {
   const [, method] = getSplittedHash()
 
-  return compareNames(method, name)
+  return !!compareNames(method, name)
 }
 
 export const isEndpointSelected = (name: string) => {
   const [,,endpoint] = getSplittedHash()
 
-  return endpoint && endpoint === parseEndpoint(name)
+  return !!(endpoint && endpoint === parseEndpoint(name))
 }
 
 export const updateLocationHash = (module = '', method = '', endpoint = '') => {
