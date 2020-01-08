@@ -4,6 +4,12 @@ const parseEndpoint = (name: string) => name.replace(/\//g, '_')
 
 const compareNames = (name: string, nameToCompare: string) => name && nameToCompare && name.toLowerCase() === nameToCompare.toLowerCase()
 
+export const getLocationParams = () => {
+  const [module = '', method = '', endpoint = ''] = getSplittedHash()
+
+  return { module, method, endpoint }
+}
+
 export const isModuleSelected = (name: string) => {
   const [module] = getSplittedHash()
 

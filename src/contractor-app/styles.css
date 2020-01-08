@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~antd/dist/antd.css';
+/* @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~materialize-css/dist/css/materialize.min.css';
 
 .contract-body pre {
@@ -33,3 +34,15 @@
 .contract .collapsible-header small.method-put { background: #fca130; }
 .contract .collapsible-header small.method-delete { background: #f93e3e; }
 .contract .collapsible-header small.method-model { background: #3b4151; }
+
+.contract-modal { min-height: 600px }
+
+.side-nav {
+  background: #aa0000;
+  height: 100vh;
+}
+
+.contract-container {
+  height: 100vh;
+  width: 100%;
+} */

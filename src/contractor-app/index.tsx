@@ -1,9 +1,9 @@
+import './styles.css'
+
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { App } from './components/App'
 
-import 'materialize-css/dist/js/materialize.min.js'
-import './styles.css'
+import { App } from './components/App'
 
 ReactDOM.render(
   <App />,

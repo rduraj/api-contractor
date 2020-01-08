@@ -1,18 +1,14 @@
+import { Layout } from 'antd'
 import * as React from 'react'
-import { Row, Col } from 'react-materialize'
-import { Contracts } from './Contracts'
+import { Provider } from 'react-redux'
+
+import { store } from '../lib/store'
+import { Router } from './Router'
 
 export const App: React.FunctionComponent = () => (
-  <>
-    <Row>
-      <Col s={10} offset='s1'>
-        <h4>API Contract</h4>
-      </Col>
-    </Row>
-    <Row>
-      <Col s={10} offset='s1'>
-        <Contracts contracts={contracts} />
-      </Col>
-    </Row>
-  </>
+  <Provider store={store()}>
+    <Layout style={{ minHeight: '100vh' }}>
+      <Router />
+    </Layout>
+  </Provider>
 )
