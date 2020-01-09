@@ -2,7 +2,8 @@ import { Collapse } from 'antd'
 import * as React from 'react'
 
 import { Contract } from '../../lib/contract'
-import { getLocationParams } from '../../lib/location/location'
+import { getLocationParams, updateLocationHash } from '../../lib/location/location'
+import { ContractDescription } from './ContractDescription'
 import { EndpointHeader } from './EndpointHeader'
 
 type Props = {
@@ -10,33 +11,47 @@ type Props = {
   readonly module: string,
 }
 
-export const Endpoints: React.FunctionComponent<Props> = ({ endpoints, module }) => {
+type State = {
+  readonly activeKey: string
+}
 
-  // const handleClickEndpoint = (method: string, name: string) => (e: React.MouseEvent<HTMLElement>) => {
-  //   e.stopPropagation()
+export class Endpoints extends React.PureComponent<Props> {
 
-  //   updateLocationHash(module, method, name)
-  // }
+  public state: State = {
+    activeKey: `${getLocationParams().method}_${getLocationParams().endpoint.replace('_','/')}`
+  }
 
-  const locationParams = getLocationParams()
-  const activeKey = `${locationParams.method}_${locationParams.endpoint}`
+  public render(): React.ReactNode {
+    const { endpoints } = this.props
 
-  return (
-    <Collapse
-      activeKey={[activeKey]}
-    >
-      {endpoints.map(({ endpoint, method, contract }, index) => (
-        <Collapse.Panel
-          // className='contract-body'
-          // expanded={isMethodSelected(method) && isEndpointSelected(name) || false}
-          header={<EndpointHeader name={name} method={method} />}
-          key={`${method}_${endpoint}`}
-          // onClick={handleClickEndpoint(method, name)}
-        >
-          {JSON.stringify(contract)}
-        </Collapse.Panel>
-      ))}
-    </Collapse>
-  )
+    return (
+      <Collapse
+        activeKey={[this.state.activeKey]}
+        onChange={key => this.updateLocation(key as string)}
+        accordion={true}
+      >
+        {endpoints.map((endpointInfo, index) => (
+          <Collapse.Panel
+            className='contract-body'
+            header={<EndpointHeader endpoint={endpointInfo.endpoint} method={endpointInfo.method} />}
+            key={`${endpointInfo.method.toLowerCase()}_${endpointInfo.endpoint.toLowerCase()}`}
+          >
+            <ContractDescription endpointInfo={endpointInfo} />
+          </Collapse.Panel>
+        ))}
+      </Collapse>
+    )
+  }
+
+  private readonly updateLocation = (key: string) => {
+    if (!key) {
+      return
+    }
+
+    const [method, endpoint] = key.split('_')
+
+    updateLocationHash(this.props.module, method, endpoint)
+    this.setState({ activeKey: key })
+  }
 
 }

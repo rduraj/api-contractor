@@ -45,6 +45,10 @@ class ContractListComponent extends React.PureComponent<StateToProps, State> {
   }
 
   private readonly updateLocation = (key: string) => {
+    if (!key) {
+      return
+    }
+
     updateLocationHash(key, '', '')
     this.setState({ activeKey: key })
   }

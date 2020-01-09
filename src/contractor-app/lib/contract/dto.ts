@@ -1,6 +1,6 @@
 export type ContractField = {
   readonly name: string,
-  readonly field: string,
+  readonly type: string,
 }
 
 export type ContractDetails = {
@@ -10,6 +10,7 @@ export type ContractDetails = {
     readonly fields: ReadonlyArray<ContractField>
   }>
   readonly body: ReadonlyArray<ContractField>,
+  readonly comment: string,
 }
 
 export type Contract = {

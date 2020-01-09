@@ -1,0 +1,36 @@
+{
+  "Auth": [
+    {
+      "contract": {
+        "response": [
+          { "code": 200, "description": "Test...", "fields": [{ "name": "token", "type": "string" }] },
+          { "code": 400, "description": "Test...", "fields": [] }
+        ],
+        "body": [
+          { "name": "login", "type": "string" },
+          { "name": "password", "type": "string" }
+        ]
+      },
+      "method": "POST",
+      "module": "Auth",
+      "endpoint": "auth/login"
+    },
+    {
+      "contract": {
+        "response": [
+          { "code": 204, "description": "", "fields": [] },
+          { "code": 400, "description": "Test...", "fields": [] }
+        ],
+        "body": [
+          { "name": "login", "type": "string" },
+          { "name": "password", "type": "string" },
+          { "name": "email", "type": "string" },
+          { "name": "name", "type": "string" }
+        ]
+      },
+      "method": "POST",
+      "module": "Auth",
+      "endpoint": "auth/register"
+    }
+  ]
+}
