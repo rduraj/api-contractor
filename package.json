@@ -1,7 +1,7 @@
 {
   "name": "api-contractor",
   "author": "Robert Duraj",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "./build/contractor-parser/parser.js",
   "bin": {
     "parse-contracts": "./build/contractor-parser/parser.js"

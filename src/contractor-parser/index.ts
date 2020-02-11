@@ -1,7 +1,10 @@
-import { readFileSync, readdirSync, writeFileSync } from 'fs'
+import { readdirSync, readFileSync, writeFileSync } from 'fs'
 import { Converter } from 'showdown'
 import { argv } from 'yargs'
 
+import { ContractStatus } from '../dto'
+
+const contractsExtension = 'md'
 const converter = new Converter()
 const contractsPath = argv.path as string
 
@@ -12,14 +15,17 @@ const extractName = (contractFilename: string) => {
     return { name: '', method: '' }
   }
 
-  const [method, name] = parsedFilename
+  const [method, name, status] = parsedFilename
+  const contractStatus = status === contractsExtension
+    ? ContractStatus.ACTIVE
+    : status
 
   return {
     name: name.replace(/_/g, '/'),
-    method: method.toUpperCase()
+    method: method.toUpperCase(),
+    status: contractStatus,
   }
 }
-
 
 const contracts: Contracts = readdirSync(contractsPath).map(module => {
 

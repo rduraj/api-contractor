@@ -27,9 +27,15 @@
   width: 80px;
 }
 
+.contract-body.contract-deprecated .collapsible-header {
+  background-color: #fff4f4;
+  color: #8a4646;
+}
+
 .contract .collapsible-header small.method-get { background: #61affe; }
 .contract .collapsible-header small.method-post { background: #49cc90; }
 .contract .collapsible-header small.method-patch { background: #227a66 }
 .contract .collapsible-header small.method-put { background: #fca130; }
 .contract .collapsible-header small.method-delete { background: #f93e3e; }
 .contract .collapsible-header small.method-model { background: #3b4151; }
+.contract .collapsible-header small.method-deprecated { background: #fff4f4; color: #ff0000 }

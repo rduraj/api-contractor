@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { Collapsible, CollapsibleItem } from 'react-materialize'
+
+import { ContractStatus } from '../../../dto'
+import { isEndpointSelected, isMethodSelected, updateLocationHash } from '../../lib/location/location'
 import { EndpointHeader } from './EndpointHeader'
-import { isMethodSelected, isEndpointSelected, updateLocationHash } from '../../lib/location/location'
 
 type Props = {
   readonly endpoints: ReadonlyArray<Contract>,
@@ -18,11 +20,11 @@ export const Endpoints: React.FunctionComponent<Props> = ({ endpoints, module })
 
   return (
     <Collapsible>
-      {endpoints.map(({ name, method, contract }, index) => (
+      {endpoints.map(({ name, method, status, contract }, index) => (
         <CollapsibleItem
-          className='contract-body'
+          className={`contract-body contract-${status}`}
           expanded={isMethodSelected(method) && isEndpointSelected(name) || false}
-          header={<EndpointHeader name={name} method={method} />}
+          header={<EndpointHeader status={status as ContractStatus} name={name} method={method} />}
           key={index}
           onClick={handleClickEndpoint(method, name)}
         >
