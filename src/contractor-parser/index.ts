@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, writeFileSync } from 'fs'
 import { Converter } from 'showdown'
 import { argv } from 'yargs'
 
-import { ContractStatus } from '../dto'
+import { Contract, Contracts, ContractStatus } from '../dto'
 
 const contractsExtension = 'md'
 const converter = new Converter()
@@ -21,8 +21,8 @@ const extractName = (contractFilename: string) => {
     : status
 
   return {
-    name: name.replace(/_/g, '/'),
     method: method.toUpperCase(),
+    name: name.replace(/_/g, '/'),
     status: contractStatus,
   }
 }
@@ -35,14 +35,14 @@ const contracts: Contracts = readdirSync(contractsPath).map(module => {
       const contract = converter.makeHtml(markdown)
 
       return {
-        module,
         contract,
-        ...extractName(contractName)
+        module,
+        ...extractName(contractName),
       }
     })
 
   return {
-    [module]: contractList as ReadonlyArray<Contract>
+    [module]: contractList as ReadonlyArray<Contract>,
   }
 
 })
