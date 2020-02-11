@@ -1,6 +1,6 @@
 {
   "extends": [
-    "@evojam/tslint-rules/tslint.json",
+    "@evojam/tslint-rules/tslint.json"
   ],
   "rules": {
     "brace-style": [true, "1tbs", { "allowSingleLine": true }],

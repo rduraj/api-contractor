@@ -1,13 +1,19 @@
 import * as React from 'react'
 import { Collapsible, CollapsibleItem } from 'react-materialize'
+
+import { Contracts } from '../../../dto'
+import { isModuleSelected, updateLocationHash } from '../../lib/location'
 import { Endpoints } from './Endpoints'
-import { isModuleSelected, updateLocationHash } from '../../lib/location/location'
 
 type Props = {
   readonly contracts: Contracts,
 }
 
-export const Contracts: React.FunctionComponent<Props> = ({ contracts }) => (
+const handleItemClick = (module: string) => () => {
+  updateLocationHash(module, '', '')
+}
+
+export const ContractList: React.FunctionComponent<Props> = ({ contracts }) => (
   <Collapsible className='contract'>
     {
       Object.keys(contracts).map(module => (
@@ -16,7 +22,7 @@ export const Contracts: React.FunctionComponent<Props> = ({ contracts }) => (
           key={module}
           header={module}
           icon='layers'
-          onClick={() => updateLocationHash(module, '', '')}
+          onClick={handleItemClick(module)}
         >
           <Endpoints module={module} endpoints={contracts[module]} />
         </CollapsibleItem>

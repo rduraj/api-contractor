@@ -1,6 +1,10 @@
 import * as React from 'react'
-import { Row, Col } from 'react-materialize'
-import { Contracts } from './Contracts'
+import { Col, Row } from 'react-materialize'
+
+import { Contracts } from '../../dto'
+import { ContractList } from './ContractList'
+
+declare const contracts: Contracts // parsed markdowns to JSON
 
 export const App: React.FunctionComponent = () => (
   <>
@@ -11,7 +15,7 @@ export const App: React.FunctionComponent = () => (
     </Row>
     <Row>
       <Col s={10} offset='s1'>
-        <Contracts contracts={contracts} />
+        <ContractList contracts={contracts} />
       </Col>
     </Row>
   </>
